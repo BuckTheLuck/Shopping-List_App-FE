@@ -1,0 +1,573 @@
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.container {
+    display: flex;
+}
+
+.blue-section {
+    background-color: #02A7F099;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    width: 550px;
+    text-align: center;
+    max-height: 750px;
+    height: 750px;
+  }
+
+.sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-header h2 {
+    color: #00aaff;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 16px;
+}
+
+.menu {
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu .shopping-lists {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu .shopping-lists .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.menu .trash {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu .trash .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.settings {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.settings .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center top;
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    color: #ffffff;
+    margin-top: 5rem;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 55rem;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1500px) {
+    .main-content {
+        margin-left: 10%;
+    }
+    
+}
+  
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 30px;
+
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.content {
+    margin-top: 35%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.content-list {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    max-height: 550px;
+    font-size: 20px;
+}
+
+.ul .li {
+    margin-bottom: 15px;
+}
+
+.p1 {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.p2 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: rgb(255,255,255,0.75);
+}
+
+.random-icon {
+    display: flex;
+    justify-content: center;
+    font-size: 200px;
+    margin-bottom: 150px;
+}
+
+.add-products-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.second-add-products-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 180px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.create-newlist-button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+    width: 25rem;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header .p-dialog-title {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+    width: 25rem;
+    height: auto;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header-icon {
+    display: none;
+  }
+
+.p-button-secondary {
+    margin-right: 1rem;
+    width: 150px;
+}
+
+.p-button-primary {
+    background-color: rgb(2, 167, 240);
+    width: 150px;
+    margin-left: 2rem;
+}
+
+.p-dialog-footer {
+    display: flex;
+}
+
+.p-field {
+    margin-bottom: 15px;
+}
+
+.lists {
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.list-item {
+    background-color: none;
+    color: #fff;
+    padding: 0.5rem;
+    margin-bottom: 1rem !important;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: background-color 0.3s;
+    border-radius: 9999px;
+}
+
+.edit-btn:hover {
+    background-color: #dddddd86;
+}
+
+.edit-btn:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    
+}
+
+.list-info {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.overlay-btn-rename {
+    background: none;
+    border: #00aaff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+.overlay-btn-delete {
+    background: none;
+    border: #00aaff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.overlay-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: background-color 0.3s;
+    border-radius: 9999px;
+}
+
+.action-btn:hover {
+    background-color: #dddddd86;
+}
+
+.action-btn:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    
+}
+
+.product-form {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+  
+.search-product {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+    color: black;
+}
+  
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+  
+.tab {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 23%;
+}
+  
+.tab.active {
+    width: 30%;
+}
+  
+.product-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+  
+.product-list p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.product-list p:hover {
+    background-color: rgb(2, 167, 240, 0.75);
+}
+
+.add-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    justify-content: flex-start;
+    margin-right: 10px;
+}
+
+.add-products-main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+}
+
+.add-product-form {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-left: 20px;
+}
+
+.add-product-section {
+    background-color: #02A7F099;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+    max-height: 750px;
+}
+
+.product-list::-webkit-scrollbar {
+    width: 12px;
+    margin-left: 5px;
+}
+
+.product-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.add-product-section ::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
+  
+.add-product-section ::-webkit-scrollbar-thumb:hover {
+    background: #228dff;
+    cursor: pointer;
+}
+
+.h3 {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: background-color 0.3s;
+    border-radius: 9999px;
+}
+
+.quantity-btn:hover {
+    background-color: #dddddd86;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    margin-left: auto;
+    background-color: transparent;
+}
+
+.item-name {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.item-status {
+    cursor: pointer;
+    margin-right: 10px;
+}

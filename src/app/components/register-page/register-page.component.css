@@ -1,0 +1,108 @@
+#container {
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Poppins';
+}
+
+.leftside, .rightside {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftside {
+  background: white;
+}
+
+.rightside {
+  background: rgb(2, 167, 240);
+}
+
+.leftside-content, .rightside-content {
+  max-width: 75%;
+}
+
+.p1 {
+  font-size: 70px;
+  padding-bottom: 0px;
+}
+
+.p2 {
+  font-size: 30px;
+}
+
+.p3 {
+  padding-top: 30px;
+}
+
+.a1 {
+  color: rgb(2, 167, 240);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.p4, .p5, .p6 {
+  color: white;
+}
+
+.p4 {
+  font-size: 50px;
+}
+
+.p5 {
+  font-size: 60px;
+}
+
+.p6 {
+  font-size: 20px;
+}
+
+.form-group input, .form-group .p-password input {
+  width: 100%;
+  font-size: 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.p-password {
+  width: 100%;
+}
+
+.p-password-panel {
+  height: fit-content;
+  border: 3px solid  rgb(2, 167, 240);
+  border-radius: 25px;
+  color: #000000;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.p-password-panel ul {
+  list-style-type: none;
+}
+
+.p-password-meter {
+  display: none;
+}
+
+.p-password-info {
+  display: none;
+}

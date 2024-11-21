@@ -1,0 +1,9 @@
+{
+    "register": [
+        {
+            "email": "<EMAIL>",
+            "password": "<PASSWORD>",
+            "id": "1"
+          }
+    ]
+}

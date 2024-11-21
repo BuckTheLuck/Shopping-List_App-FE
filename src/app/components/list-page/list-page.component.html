@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="list-page.component.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Shopping List App</h2>
+            </div>
+            <div class="user-section">
+                <div class="user-icon">{{ firstNameInitial }}</div>
+                <div class="username">{{ userDetails?.firstname }} {{ userDetails?.lastname }}</div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <div class="shopping-lists" (click)="goToShoppingLists()">
+                        <span class="icon">📖</span>
+                        Shopping lists
+                    </div>
+                    <div class="trash" (click)="goToTrash()">
+                        <span class="icon">🗑️</span>
+                        Trash
+                    </div>
+                </ul>
+            </nav>
+            <div class="settings" (click)="logoutAccount()">
+              <span class="icon">⚙️</span>
+              Logout
+          </div>
+        </aside>
+        <main class="main-content">
+            <div class="container">
+              <div class="blue-section">
+                <div class="header">
+                  <h1>{{ listDetails?.name }}</h1>
+                  <div class="actions">
+                    <!-- <button class="action-btn">✏️</button>
+                    <button class="action-btn">🔍</button>
+                    <button class="action-btn">⋮</button> -->
+                  </div>
+                </div>
+                <div [ngClass]="{'content': listItems.length === 0, 'content-list': listItems.length > 0}">
+                  <div class="main-section" *ngIf="listItems.length === 0">
+                    <p class="random-icon" id="randomIcon">{{generateRandomIcon()}}</p>
+                    <p class="p1">What do you need to buy?</p>
+                    <p class="p2">Start searching products to add them to your list</p>
+                    <button *ngIf="!showAddProduct" class="add-products-btn" (click)="toggleAddProduct()">+ Add products</button>
+                  </div>
+                  <div class="product-list" *ngIf="listItems.length > 0">
+                    <ul>
+                      <li *ngFor="let item of listItems" class="list-item">
+                        <span class="item-name">{{ item.productName }}</span>
+                        <div class="item-actions">
+                          <button class="quantity-btn" (click)="increaseQuantity(item)">+</button>
+                          {{ item.quantity }}
+                          <button class="quantity-btn" (click)="decreaseQuantity(item)">-</button>
+                        </div>
+                        <button class="delete-btn" (click)="deleteProduct(item.productName)">❌</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="showAddProduct" class="add-product-section">
+                <div class="form-header">
+                  <h3 class="h3">Add products</h3>
+                  <button class="action-btn" (click)="toggleAddProduct()">❌</button>
+                </div>
+                <input type="text" [(ngModel)]="searchProductName" (input)="filterProducts()" placeholder="e.g milk" class="search-product"/>
+                  <button class="tab" (click)="addCustomProduct(searchProductName)">Add Product</button>
+                <div class="product-list">
+                  <p *ngFor="let product of filteredProducts" (click)="isProductAdded(product.name) ? null : addProduct(product.name)" [class.disabled]="isProductAdded(product.name)">
+                    <span class="add-icon">{{ isProductAdded(product.name) ? '✅' : '+' }} {{ product.name }}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button *ngIf="!showAddProduct && listItems.length > 0" class="second-add-products-btn" (click)="toggleAddProduct()">+ Add products</button>
+        </main>
+    </div>
+</body>
+</html>

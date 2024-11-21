@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-header h2 {
+    color: #00aaff;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 16px;
+}
+
+.menu {
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu .shopping-lists {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu .shopping-lists .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.menu .trash {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu .trash .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.settings {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.settings .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 80px 40px;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center top;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 45px;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+.create-newlist-button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+    width: 25rem;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header .p-dialog-title {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+    width: 25rem;
+    height: auto;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header-icon {
+    display: none;
+}
+
+.p-button-secondary {
+    margin-right: 1rem;
+    width: 150px;
+}
+
+.p-button-primary {
+    background-color: rgb(2, 167, 240);
+    width: 150px;
+    margin-left: 2rem;
+}
+
+.p-dialog-footer {
+    display: flex;
+}
+
+.p-field {
+    margin-bottom: 15px;
+}
+
+.lists {
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.list-item {
+    background-color: rgb(2, 167, 240, 0.75);
+    color: #fff;
+    padding: 0.5rem;
+    margin-bottom: 1rem !important;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.list-item:hover {
+    background-color: rgb(2, 167, 240, 0.6);
+    cursor: pointer;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: background-color 0.3s;
+    border-radius: 9999px;
+}
+
+.action-btn:hover {
+    background-color: #dddddd86;
+}
+
+.action-btn:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    
+}
+
+.list-info {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.overlay-btn-rename {
+    background: none;
+    border: #00aaff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .overlay-btn-delete {
+    background: none;
+    border: #00aaff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .overlay-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }

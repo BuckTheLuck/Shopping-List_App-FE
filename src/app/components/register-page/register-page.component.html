@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="register-page.component.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="container">
+
+        <div class="leftside">
+            <form class="form" [formGroup]="registerForm" (ngSubmit)="sendRegisterData()">
+                <div>
+                    <p class="p1">Create an account</p>
+                    <p class="p2">Make the best lists! 😎</p>
+                </div>
+                <div class="form-group">
+                    @if (firstNameFormField?.touched && firstNameFormField?.value == '') {
+                        <label for="firstName" class="error-message" style="color: rgb(255, 84, 84)">First Name<span> - required</span></label>
+                    }
+                    @else {
+                        <label for="firstName">First Name</label>
+                    }
+                    <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Enter your first name" (click)="resetTouched('firstName')">
+                </div>
+                <div class="form-group">
+                    @if (lastNameFormField?.touched && lastNameFormField?.value == '') {
+                        <label for="lastName" class="error-message" style="color: rgb(255, 84, 84)">Last Name<span> - required</span></label>
+                    }
+                    @else {
+                        <label for="lastName">Last Name</label>
+                    }
+                    <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Enter your last name" (click)="resetTouched('lastName')">
+                </div>
+                <div class="form-group">
+                    @if(isInvalidEmail()) {
+                        <label for="email" class="error-message" style="color: rgb(255, 84, 84)">E-mail<span> - invalid</span></label>
+                    }
+                    @else if (emailFormField.touched && emailFormField.value == '') {
+                        <label for="email" class="error-message" style="color: rgb(255, 84, 84)">E-mail<span> - required</span></label>
+                    }
+                    @else {
+                        <label for="email">E-mail</label>
+                    }
+                    <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email" (click)="resetTouched('email')">
+                </div>
+                <div class="form-group">
+                    @if(passwordFormField?.invalid && passwordFormField?.value != ''){
+                        <label for="password" class="error-message" style="color: rgb(255, 84, 84)">Password<span> - invalid</span></label>
+                    }
+                    @else if (passwordFormField?.touched && passwordFormField?.value == '') {
+                        <label for="password" class="error-message" style="color: rgb(255, 84, 84)">Password<span> - required</span></label>
+                    }
+                    @else {
+                        <label for="password">Password</label>
+                    }
+                    <br>
+                    <p-password [toggleMask]="true" inputStyleClass="password" formControlName="password" class="password" placeholder="Enter your password">
+                        <ng-template pTemplate="footer">
+                            @if (checkPasswordRequirements()) {
+                                <h3 class="mt-2 error-message">Password must contain</h3>
+                                <p-divider />
+                            }
+                            @else {
+                                <h3 class="mt-2" style="color: rgb(16, 192, 16);">Password is correct</h3>
+                            }
+                            <ul class="pl-0 ml-1 mt-0" style="line-height: 1.3;">
+                                <li class="error-" *ngIf="!passwordFormField?.value?.match('^(?=.*[A-Z])')">At least one uppercase</li>
+                                <li class="error-" *ngIf="!passwordFormField?.value?.match('^(?=.*[a-z])')">At least one lowercase</li>
+                                <li class="error-" *ngIf="!passwordFormField?.value?.match('(?=.*[!@#$%^&*])')">At least one special sign</li>
+                                <li class="error-" *ngIf="!passwordFormField?.value?.match('.{8,}')">Minimum 8 characters</li>
+                                <li class="error-" *ngIf="passwordFormField?.value?.match('.{32,}')">Maximum 32 characters</li>
+                                <li class="error-" *ngIf="!passwordFormField?.value?.match('^\\S*$')">No spaces</li>
+                            </ul>
+                        </ng-template>
+                    </p-password>
+                        
+                    
+                </div>
+                <div class="form-group">
+                    @if (isInvalidPassword()) {
+                        <label for="retPassword" class="error-message" style="color: rgb(255, 84, 84)">Confirm Password<span> - passwords do not match</span></label>
+                    }
+                    @else {
+                        <label for="retPassword" class="error-message">Confirm Password</label>
+                    }
+                    <br>
+                    <p-password [toggleMask]="true" inputStyleClass="retPassword" formControlName="retPassword" id="retPassword" [feedback]="false" placeholder="Confirm your password"></p-password>
+                    
+                </div>
+                <button type="submit" class="btn btn-primary w-100" 
+                        style="background-color: rgb(2, 167, 240); border: none" 
+                        [disabled]="registerForm.invalid">
+                    Sign up
+                </button>
+                <div>
+                    <p class="p3">Already have an account?</p>
+                    <a class="a1" href="/login">Login here</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="rightside">
+            <div>
+                <p class="p4">Shopping List App</p>
+                <p class="p5">Start planning, start saving</p>
+                <p class="p6">Do your shopping with a list. Buy products you actually need.</p>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
