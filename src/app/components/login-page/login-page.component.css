@@ -1,7 +1,7 @@
-#container {
+  #container {
     min-height: 100vh;
     display: flex;
-    font-family: 'Poppins';;
+    font-family: 'Poppins';
   }
   
   .leftside, .rightside {
@@ -38,6 +38,12 @@
   
   .a1 {
     color: rgb(2, 167, 240);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .a2 {
+    color: gray;
     text-decoration: underline;
     cursor: pointer;
   }

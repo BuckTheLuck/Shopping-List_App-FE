@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Shopping List App</title>
+    <link href="admin-login-page.component.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Administrator Login</h1>
+        <p>Welcome back! Please log in to manage the app</p>
+        <form> <!-- tutaj dodac (ngSubmit)=loginAdmin()-->
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid" style="background-color: rgb(2, 167, 240); border: none">Sign in as Admin</button>
+        </form>
+        <div>
+            <a href="/login">Back to User Login</a>
+        </div>
+    </div>
+</body>
+</html>
