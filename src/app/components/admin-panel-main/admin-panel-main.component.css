@@ -1,70 +1,84 @@
-.admin-panel {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
+.admin-container {
+    display: flex;
+    height: 100vh;
     font-family: Arial, sans-serif;
   }
-  
-  h1 {
-    font-size: 2em;
-    color: #333;
-  }
-  
-  p {
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .user-lists {
+
+  .left-panel {
+    width: 250px;
+    background-color: #f0f0f0;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
   }
   
-  .user-category {
-    width: 30%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    margin: 10px;
-  }
-  
-  h2 {
-    font-size: 1.5em;
-    color: #444;
+  .left-panel h1 {
+    font-size: 24px;
     margin-bottom: 10px;
   }
   
+  .left-panel p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .logout-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #e04345;
+  }
+  
+  .right-panel {
+    width: 75%;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .user-list {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  
+  .user-list h2 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  
   ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
   }
   
   li {
-    margin: 5px 0;
-    padding: 5px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
   }
   
   button {
     margin-left: 10px;
     padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     background-color: #007bff;
-    color: #fff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
   }
   
   button:hover {
     background-color: #0056b3;
-  }
-  
-  button:active {
-    background-color: #003f7f;
   }
   
