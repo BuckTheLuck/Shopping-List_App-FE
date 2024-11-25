@@ -1,28 +1,28 @@
 import {
   TimesIcon
-} from "./chunk-YTVRFSOD.js";
+} from "./chunk-7BVH7Q7W.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-QDYC3EHY.js";
+import {
+  ConnectedOverlayScrollHandler,
+  DomHandler
+} from "./chunk-UY4R2ODX.js";
 import {
   animate,
   state,
   style,
   transition,
   trigger
-} from "./chunk-5OSSYMJW.js";
-import {
-  Ripple,
-  RippleModule
-} from "./chunk-QJLPCKFZ.js";
-import {
-  ConnectedOverlayScrollHandler,
-  DomHandler
-} from "./chunk-4KMPQ5LD.js";
+} from "./chunk-EJF7W3BU.js";
 import {
   OverlayService,
   PrimeNGConfig,
   PrimeTemplate,
   SharedModule,
   zindexutils
-} from "./chunk-JQXRKVQX.js";
+} from "./chunk-J22WN5U2.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -31,7 +31,7 @@ import {
   NgStyle,
   NgTemplateOutlet,
   isPlatformBrowser
-} from "./chunk-VWGNI36Q.js";
+} from "./chunk-34XBWA7P.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -78,8 +78,8 @@ import {
   ɵɵresolveDocument,
   ɵɵrestoreView,
   ɵɵtemplate
-} from "./chunk-KRPM2RXB.js";
-import "./chunk-SXIXOCJ4.js";
+} from "./chunk-NOWXPW5K.js";
+import "./chunk-W7WAD56I.js";
 
 // node_modules/primeng/fesm2022/primeng-overlaypanel.mjs
 var _c0 = ["*"];

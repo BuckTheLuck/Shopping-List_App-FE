@@ -4,6 +4,7 @@ import { LoginData } from '../../models/login-data';
 import { LoginService } from '../../services/login.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-page',
@@ -21,6 +22,7 @@ export class LoginPageComponent {
     private loginService: LoginService,
     private authService: AuthService,
     private router: Router,
+    private snackBar: MatSnackBar,
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -43,6 +45,12 @@ export class LoginPageComponent {
         },
         (error: any) => {
           console.error("Login failed:", error);
+          this.snackBar.open('Login failed: Incorrect credientials or user is blocked.', 'Close', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
+          
           this.loginError = true;
         }
       );
