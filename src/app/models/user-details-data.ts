@@ -3,4 +3,6 @@ export type UserDetails = {
     email: string;
     firstname: string;
     lastname: string;
+    role: number;
+    blocked: boolean;
 }

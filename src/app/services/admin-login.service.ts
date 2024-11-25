@@ -17,7 +17,7 @@ export class AdminLoginService {
   
   constructor() {}
 
-  login(data: LoginData): Observable<string> {
-    return this.http.post(`${this.baseUrl}auth/admin-login`, data, {responseType: 'text'});
+  loginAdmin(data: LoginData): Observable<string> {
+    return this.http.post(`${this.baseUrl}auth/admin/login`, data, {responseType: 'text'});
     }
   }

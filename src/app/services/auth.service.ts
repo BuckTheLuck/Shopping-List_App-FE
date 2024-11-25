@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { LoginService } from './login.service';
+import { AdminLoginService } from './admin-login.service';
 import { LoginData } from '../models/login-data';
 import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { UserDetails } from './user.service';
@@ -11,6 +12,7 @@ export class AuthService {
   private _isLogged$ = new BehaviorSubject<boolean>(false);
   isLogged$ = this._isLogged$.asObservable();
   private loginService = inject(LoginService);
+  private AdminLoginService = inject(AdminLoginService);
   decodedToken: any;
   userDetails?: UserDetails;
 
@@ -32,6 +34,24 @@ export class AuthService {
       }),
       catchError((error: any) => {
         console.error('Error during login:', error);
+        return throwError(error);
+      })
+    );
+  }
+
+  adminAuthorization(data: LoginData) {
+    return this.AdminLoginService.loginAdmin(data).pipe(
+      tap((response: string) => {
+        if (response) {
+          localStorage.setItem('token', response);
+          this._isLogged$.next(true);
+          this.decodeToken();
+        } else {
+          console.error('No token found in response');
+        }
+      }),
+      catchError((error: any) => {
+        console.error('Error during admin login:', error);
         return throwError(error);
       })
     );
@@ -59,6 +79,7 @@ export class AuthService {
   userLogOut() {
     this._isLogged$.next(false);
     localStorage.removeItem('token');
+    this.decodedToken = null;
   }
 
   isLoggedIn(): boolean {

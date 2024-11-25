@@ -9,7 +9,7 @@
     <div class="login-container">
         <h1>Administrator Login</h1>
         <p>Welcome back! Please log in to manage the app</p>
-        <form> <!-- tutaj dodac (ngSubmit)=loginAdmin()-->
+        <form [formGroup]="loginForm" (ngSubmit)="loginAdmin()">
             <div class="form-group">
                 <label for="email">E-mail:</label>
                 <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
