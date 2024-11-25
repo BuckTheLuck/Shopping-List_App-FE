@@ -2,6 +2,14 @@ import {
   TimesIcon
 } from "./chunk-YTVRFSOD.js";
 import {
+  animate,
+  animation,
+  style,
+  transition,
+  trigger,
+  useAnimation
+} from "./chunk-5OSSYMJW.js";
+import {
   ButtonDirective,
   ButtonModule
 } from "./chunk-E7SWAUXN.js";
@@ -14,14 +22,6 @@ import {
   BaseIcon,
   DomHandler
 } from "./chunk-4KMPQ5LD.js";
-import {
-  animate,
-  animation,
-  style,
-  transition,
-  trigger,
-  useAnimation
-} from "./chunk-5OSSYMJW.js";
 import {
   Footer,
   Header,

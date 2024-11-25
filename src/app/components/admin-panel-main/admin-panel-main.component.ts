@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   encapsulation: ViewEncapsulation.None
 })
 export class AdminPanelMainComponent implements OnInit {
-  uuid?: string;
+  id?: string;
   users: UserDetails[] = [];
   activeUsers: UserDetails[] = [];
   admins: UserDetails[] = [];
@@ -30,10 +30,10 @@ export class AdminPanelMainComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.authService.decodeToken();
-    // if (this.authService.decodedToken) {
-    //   this.uuid = this.authService.decodedToken.sub;
-    // }
+    this.authService.decodeToken();
+    if (this.authService.decodedToken) {
+      this.id = this.authService.decodedToken.sub;
+    }
     this.fetchUsers();
   }
 
@@ -56,48 +56,56 @@ export class AdminPanelMainComponent implements OnInit {
   }
 
   blockUser(uuid: string): void {
-    const userId = this.authService.decodedToken.sub;
-    if (userId) {
-      this.userService.blockUser(uuid).subscribe(
-        () => {
-          console.log(`Użytkownik o UUID ${uuid} został zablokowany.`);
-          this.fetchUsers();
-        },
-        (error) => {
-          console.error('Błąd podczas blokowania użytkownika', error);
-        }
-      );
-    }
+    this.userService.blockUser(uuid).subscribe({
+      next: (response) => {
+        console.log('Response from blockUser:', response); 
+        this.snackBar.open('User blocked successfully', 'Close', {
+          duration: 3000,
+        });
+        this.fetchUsers(); 
+      },
+      error: (err) => {
+        console.error('Error blocking user:', err);
+        this.snackBar.open('Failed to block user', 'Close', {
+          duration: 3000,
+        });
+      },
+    });
   }
+  
 
   unblockUser(uuid: string): void {
-    const userId = this.authService.decodedToken.sub;
-    if (userId) {
-      this.userService.unblockUser(uuid).subscribe(
-        () => {
-          console.log(`Użytkownik o UUID ${uuid} został odblokowany.`);
-          this.fetchUsers();
-        },
-        (error) => {
-          console.error('Błąd podczas odblokowywania użytkownika', error);
-        }
-      );
-    }
+    this.userService.unblockUser(uuid).subscribe({
+      next: () => {
+        this.snackBar.open('User unblocked successfully', 'Close', {
+          duration: 3000,
+        });
+        this.fetchUsers(); 
+      },
+      error: (err) => {
+        this.snackBar.open('Failed to unblock user', 'Close', {
+          duration: 3000,
+        });
+        console.error('Error unblocking user:', err);
+      },
+    });
   }
 
   deleteUser(uuid: string): void {
-    const userId = this.authService.decodedToken.sub;
-    if (userId) {
-      this.userService.deleteUser(uuid).subscribe(
-        () => {
-          console.log(`Użytkownik o UUID ${uuid} został usunięty.`);
-          this.fetchUsers();
-        },
-        (error) => {
-          console.error('Błąd podczas usuwania użytkownika', error);
-        }
-      );
-    }
+    this.userService.deleteUser(uuid).subscribe({
+      next: () => {
+        this.snackBar.open('User deleted successfully', 'Close', {
+          duration: 3000,
+        });
+        this.fetchUsers(); 
+      },
+      error: (err) => {
+        this.snackBar.open('Failed to delete user', 'Close', {
+          duration: 3000,
+        });
+        console.error('Error deleting user:', err);
+      },
+    });
   }
 
   toggleOverlayPanel(event: Event, overlayPanel: OverlayPanel) {

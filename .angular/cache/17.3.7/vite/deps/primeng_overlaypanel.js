@@ -2,6 +2,13 @@ import {
   TimesIcon
 } from "./chunk-YTVRFSOD.js";
 import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from "./chunk-5OSSYMJW.js";
+import {
   Ripple,
   RippleModule
 } from "./chunk-QJLPCKFZ.js";
@@ -9,13 +16,6 @@ import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-4KMPQ5LD.js";
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from "./chunk-5OSSYMJW.js";
 import {
   OverlayService,
   PrimeNGConfig,

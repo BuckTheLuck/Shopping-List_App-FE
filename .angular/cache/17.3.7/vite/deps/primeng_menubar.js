@@ -3,6 +3,8 @@ import {
   RouterLinkActive,
   RouterModule
 } from "./chunk-DRA6A5OX.js";
+import "./chunk-CBGFN5BE.js";
+import "./chunk-IAEZFEER.js";
 import {
   Ripple,
   RippleModule
@@ -12,8 +14,6 @@ import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-4KMPQ5LD.js";
-import "./chunk-CBGFN5BE.js";
-import "./chunk-IAEZFEER.js";
 import {
   ObjectUtils,
   PrimeNGConfig,

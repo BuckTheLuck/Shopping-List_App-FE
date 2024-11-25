@@ -6,27 +6,31 @@
   </div>
 
   <div class="right-panel">
+    <!-- Active Users -->
     <div class="user-list">
       <h2>Active Users</h2>
       <ul>
         <li *ngFor="let user of activeUsers">
           {{ user.firstname }} {{ user.lastname }} ({{ user.email }})
-          <button (click)="blockUser(user.uuid)">Block</button>
-          <button (click)="deleteUser(user.uuid)">Delete</button>
+          <button (click)="blockUser(user.id)">Block</button>
+          <button (click)="deleteUser(user.id)">Delete</button>
         </li>
       </ul>
     </div>
 
+    <!-- Blocked Users -->
     <div class="user-list">
       <h2>Blocked Users</h2>
       <ul>
         <li *ngFor="let user of blockedUsers">
           {{ user.firstname }} {{ user.lastname }} ({{ user.email }})
-          <button (click)="unblockUser(user.uuid)">Unblock</button>
-          <button (click)="deleteUser(user.uuid)">Delete</button>
+          <button (click)="unblockUser(user.id)">Unblock</button>
+          <button (click)="deleteUser(user.id)">Delete</button>
         </li>
       </ul>
     </div>
+  
+
 
     <!-- <div class="user-list">
       <h2>Deleted Users</h2>

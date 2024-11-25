@@ -3,17 +3,17 @@ import {
   PlusIcon
 } from "./chunk-WV2QWDF7.js";
 import {
-  Ripple,
-  RippleModule
-} from "./chunk-QJLPCKFZ.js";
-import "./chunk-4KMPQ5LD.js";
-import {
   animate,
   state,
   style,
   transition,
   trigger
 } from "./chunk-5OSSYMJW.js";
+import {
+  Ripple,
+  RippleModule
+} from "./chunk-QJLPCKFZ.js";
+import "./chunk-4KMPQ5LD.js";
 import {
   PrimeTemplate,
   SharedModule,

@@ -2,18 +2,12 @@ import {
   TimesIcon
 } from "./chunk-YTVRFSOD.js";
 import {
-  AutoFocus,
-  AutoFocusModule
-} from "./chunk-W2A36IAL.js";
-import {
   InputText,
   InputTextModule
 } from "./chunk-AGKDIJ3N.js";
 import {
-  BaseIcon,
-  ConnectedOverlayScrollHandler,
-  DomHandler
-} from "./chunk-4KMPQ5LD.js";
+  NG_VALUE_ACCESSOR
+} from "./chunk-6MSFKIQC.js";
 import {
   animate,
   style,
@@ -21,8 +15,14 @@ import {
   trigger
 } from "./chunk-5OSSYMJW.js";
 import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-6MSFKIQC.js";
+  AutoFocus,
+  AutoFocusModule
+} from "./chunk-W2A36IAL.js";
+import {
+  BaseIcon,
+  ConnectedOverlayScrollHandler,
+  DomHandler
+} from "./chunk-4KMPQ5LD.js";
 import {
   OverlayService,
   PrimeNGConfig,
