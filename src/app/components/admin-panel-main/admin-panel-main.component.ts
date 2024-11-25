@@ -52,31 +52,52 @@ export class AdminPanelMainComponent implements OnInit {
   updateUserLists(): void {
     this.activeUsers = this.users.filter((user) => user.role == 0)    //normal user
     this.admins = this.users.filter((user) => user.role == 1)         //admin user
-    this.activeUsers = this.users.filter((user) => user.role == 2)    //blocked users
+    this.blockedUsers = this.users.filter((user) => user.role == 2)    //blocked users
   }
 
-  changeUserRole(userId: string, newRole: number): void {
-    const user = this.users.find((user) => user.uuid === userId);
-    if (user) {
-      user.role = newRole;
-      this.updateUserLists();
+  blockUser(uuid: string): void {
+    const userId = this.authService.decodedToken.sub;
+    if (userId) {
+      this.userService.blockUser(uuid).subscribe(
+        () => {
+          console.log(`Użytkownik o UUID ${uuid} został zablokowany.`);
+          this.fetchUsers();
+        },
+        (error) => {
+          console.error('Błąd podczas blokowania użytkownika', error);
+        }
+      );
     }
   }
 
-  blockUser(userId: string): void {
-    this.changeUserRole(userId, 2);
+  unblockUser(uuid: string): void {
+    const userId = this.authService.decodedToken.sub;
+    if (userId) {
+      this.userService.unblockUser(uuid).subscribe(
+        () => {
+          console.log(`Użytkownik o UUID ${uuid} został odblokowany.`);
+          this.fetchUsers();
+        },
+        (error) => {
+          console.error('Błąd podczas odblokowywania użytkownika', error);
+        }
+      );
+    }
   }
 
-  unblockUser(userId: string): void {
-    this.changeUserRole(userId, 0);
-  }
-
-  promoteToAdmin(userId: string): void {
-    this.changeUserRole(userId, 1);
-  }
-
-  demoteFromAdmin(userId: string): void {
-    this.changeUserRole(userId, 0);
+  deleteUser(uuid: string): void {
+    const userId = this.authService.decodedToken.sub;
+    if (userId) {
+      this.userService.deleteUser(uuid).subscribe(
+        () => {
+          console.log(`Użytkownik o UUID ${uuid} został usunięty.`);
+          this.fetchUsers();
+        },
+        (error) => {
+          console.error('Błąd podczas usuwania użytkownika', error);
+        }
+      );
+    }
   }
 
   toggleOverlayPanel(event: Event, overlayPanel: OverlayPanel) {

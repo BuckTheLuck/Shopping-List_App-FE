@@ -36,4 +36,28 @@ private baseUrl: string = environment.baseURL;
     
     return this.http.get<UserDetailsV2[]>(`${this.baseUrl}users`, { headers });
   }
+
+  blockUser(uuid: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    });
+
+    return this.http.put(`${this.baseUrl}users/${uuid}/block`, { headers });
+  }
+
+  unblockUser(uuid: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    });
+
+    return this.http.put(`${this.baseUrl}users/${uuid}/unblock`, { headers });
+  }
+
+  deleteUser(uuid: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    });
+    
+    return this.http.delete(`${this.baseUrl}users/${uuid}`, { headers });
+  }
 }

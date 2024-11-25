@@ -2,7 +2,7 @@
   <div class="left-panel">
     <h1>Admin Panel</h1>
     <p>From here, you can manage user roles and statuses.</p>
-    <button class="logout-button" (click)="logoutAccount()">Log Out</button>
+    <button class="logout-button" (click)="logoutAccount()">Log Out <span class="icon">⚙️</span></button>
   </div>
 
   <div class="right-panel">
@@ -11,8 +11,8 @@
       <ul>
         <li *ngFor="let user of activeUsers">
           {{ user.firstname }} {{ user.lastname }} ({{ user.email }})
-          <button (click)="changeUserRole(user.uuid, 2)">Block</button>
-          <button (click)="changeUserRole(user.uuid, -1)">Delete</button>
+          <button (click)="blockUser(user.uuid)">Block</button>
+          <button (click)="deleteUser(user.uuid)">Delete</button>
         </li>
       </ul>
     </div>
@@ -22,8 +22,8 @@
       <ul>
         <li *ngFor="let user of blockedUsers">
           {{ user.firstname }} {{ user.lastname }} ({{ user.email }})
-          <button (click)="changeUserRole(user.uuid, 0)">Unblock</button>
-          <button (click)="changeUserRole(user.uuid, -1)">Delete</button>
+          <button (click)="unblockUser(user.uuid)">Unblock</button>
+          <button (click)="deleteUser(user.uuid)">Delete</button>
         </li>
       </ul>
     </div>
