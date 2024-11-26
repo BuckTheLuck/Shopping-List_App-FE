@@ -3,5 +3,5 @@ export const environment = {
   production: false,
   development: true,
   environmentName:"DEV",
-  baseURL:"http://localhost:8080/api/"
+  baseURL:"http://BuckTheLuck-40110.portmap.host:40110/api/"
 };

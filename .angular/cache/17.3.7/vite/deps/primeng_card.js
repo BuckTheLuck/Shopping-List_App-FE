@@ -4,14 +4,14 @@ import {
   ObjectUtils,
   PrimeTemplate,
   SharedModule
-} from "./chunk-J22WN5U2.js";
+} from "./chunk-MXSN4XY4.js";
 import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
-} from "./chunk-34XBWA7P.js";
+} from "./chunk-UTMIO7HW.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -43,8 +43,8 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate1
-} from "./chunk-NOWXPW5K.js";
-import "./chunk-W7WAD56I.js";
+} from "./chunk-EIOSJT3T.js";
+import "./chunk-QZGDMFQA.js";
 
 // node_modules/primeng/fesm2022/primeng-card.mjs
 var _c0 = ["*", [["p-header"]], [["p-footer"]]];
