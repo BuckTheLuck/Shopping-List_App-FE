@@ -21,6 +21,8 @@ jobs:
           lfs: false
       - name: Install Angular CLI
         run: npm install -g @angular/cli
+      - name: Set execute permission for ng
+        run: chmod +x $(npm bin)/ng
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
