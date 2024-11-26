@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
-       id-token: write
-       contents: read
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
         with:
@@ -24,7 +24,9 @@ jobs:
 
       # Install Angular CLI globally
       - name: Install Angular CLI
-        run: npm install -g @angular/cli
+        run: |
+          npm install -g @angular/cli
+          chmod +x $(which ng)  # Ensure execute permissions for ng command
 
       - name: Install dependencies
         run: npm install
@@ -37,8 +39,9 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: "upload"
-          app_location: "/" # App source code path
-          output_location: "dist/shopping-list-app" 
+          app_location: "/"  # App source code path
+          output_location: "dist/shopping-list-app"
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
